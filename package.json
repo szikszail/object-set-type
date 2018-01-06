@@ -2,7 +2,7 @@
   "name": "object-set",
   "version": "1.0.0",
   "description": "A Set implementation which supports Objects.",
-  "main": "index.js",
+  "main": "lib/ObjectSet.js",
   "scripts": {
     "test": "mocha ./test/*.spec.js",
     "coverage": "istanbul cover --include-all-sources ./node_modules/mocha/bin/_mocha --root ./lib -- ./test/*.spec.js",

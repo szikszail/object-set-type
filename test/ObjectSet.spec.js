@@ -1,6 +1,6 @@
 'use strict';
 
-const ObjectSet = require('../index');
+const ObjectSet = require('../lib/ObjectSet');
 const expect = require('chai').expect;
 
 describe('ObjectSet', () => {
