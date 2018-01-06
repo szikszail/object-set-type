@@ -9,7 +9,7 @@ A Set implementation which supports Objects.
 ```javascript
 'use strict';
 
-const ObjectSet = require('object-set');
+const ObjectSet = require('object-set-type');
 
 const set = new ObjectSet();
 set.add(1);

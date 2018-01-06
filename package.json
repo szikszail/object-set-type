@@ -1,6 +1,6 @@
 {
   "name": "object-set-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Set implementation which supports Objects.",
   "main": "lib/ObjectSet.js",
   "scripts": {
