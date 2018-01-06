@@ -1,0 +1,34 @@
+{
+  "name": "object-set",
+  "version": "1.0.0",
+  "description": "A Set implementation which supports Objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*.spec.js",
+    "coverage": "istanbul cover --include-all-sources ./node_modules/mocha/bin/_mocha --root ./lib -- ./test/*.spec.js",
+    "travis": "istanbul cover --include-all-sources ./node_modules/mocha/bin/_mocha --root ./lib --report lcovonly -- ./test/*.spec.js -R spec && cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szikszail/object-set.git"
+  },
+  "keywords": [
+    "Set",
+    "Object"
+  ],
+  "author": "Laszlo Szikszai <sziklaszlo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szikszail/object-set/issues"
+  },
+  "homepage": "https://github.com/szikszail/object-set#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5"
+  },
+  "dependencies": {
+    "deep-eql": "^3.0.1"
+  }
+}
