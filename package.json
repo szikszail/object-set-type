@@ -1,5 +1,5 @@
 {
-  "name": "objectset",
+  "name": "object-set-type",
   "version": "1.0.0",
   "description": "A Set implementation which supports Objects.",
   "main": "lib/ObjectSet.js",
