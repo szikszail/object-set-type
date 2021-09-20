@@ -1,8 +1,9 @@
 {
   "name": "object-set-type",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Set implementation which supports Objects.",
   "main": "lib/ObjectSet.js",
+  "types": "lib/ObjectSet.d.ts",
   "scripts": {
     "test": "mocha ./test/*.spec.js"
   },
