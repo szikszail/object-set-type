@@ -1,4 +1,4 @@
-interface ObjectSet<T> {
+class ObjectSet<T> {
     constructor(iterable: Iterable<T>);
     public has(needle: T): boolean;
     public delete(item: T): boolean;
