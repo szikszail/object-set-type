@@ -1,5 +1,6 @@
 class ObjectSet<T> {
     constructor(iterable: Iterable<T>);
+    public equals(a: T, b: T): boolean;
     public has(needle: T): boolean;
     public delete(item: T): boolean;
     public add(item?: T): ObjectSet<T>

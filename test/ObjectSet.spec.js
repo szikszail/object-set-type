@@ -32,6 +32,20 @@ describe('ObjectSet', () => {
         });
     });
 
+    describe('.equals', () => {
+        it('should support custom comparator', () => {
+            class CustomSet extends ObjectSet {
+                equals(a, b) {
+                    return a % 2 == b % 2;
+                }
+            }
+            const customSet = new CustomSet([1, 2, 3, 4]);
+            expect(customSet.size).to.equal(2);
+            expect(customSet.has(1)).to.be.true;
+            expect(customSet.has(2)).to.be.true;
+        });
+    });
+
     describe('.add, .has', () => {
         it('should add simple value', () => {
             set.add(1);
