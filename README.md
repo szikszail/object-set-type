@@ -23,6 +23,6 @@ console.log(set.size); // 3
 Array.from(set); // 1, "Hello", {a: 1}
 ```
 
-## Custom conditions
+## Custom uniqueness logic
 
-The `equals(a,b)` method of the instance is responsible for comparing two items, and the set logic is based on this. This method can be overwritten to support custom logic.
+The `equals(a,b)` method of the instance is responsible for comparing two items, and the set logic is based on this. This method can be overwritten to support custom uniqueness logic, e.g. handle objects, but compare only certain properties.
