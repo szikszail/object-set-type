@@ -1,5 +1,9 @@
 # object-set-type
 
+![Downloads](https://img.shields.io/npm/dw/object-set-type?style=flat-square)
+![Version@npm](https://img.shields.io/npm/v/object-set-type?label=version%40npm&style=flat-square)
+![Version@git](https://img.shields.io/github/package-json/v/szikszail/object-set-type/master?label=version%40git&style=flat-square)
+
 A Set implementation which supports **Objects** and **custom conditions**.
 
 ## Usage
