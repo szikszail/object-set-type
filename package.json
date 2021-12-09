@@ -1,6 +1,6 @@
 {
   "name": "object-set-type",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A Set implementation which supports Objects.",
   "main": "lib/ObjectSet.js",
   "types": "lib/ObjectSet.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szikszail/object-set-tyőe.git"
+    "url": "git+https://github.com/szikszail/object-set-type.git"
   },
   "keywords": [
     "Set",
