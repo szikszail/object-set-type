@@ -1,4 +1,4 @@
-class ObjectSet<T> {
+declare class ObjectSet<T> {
     constructor(iterable: Iterable<T>);
     public equals(a: T, b: T): boolean;
     public has(needle: T): boolean;
