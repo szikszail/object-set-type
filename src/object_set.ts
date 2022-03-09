@@ -3,6 +3,11 @@ import deepEqual = require('deep-eql');
 
 const ENTRIES = Symbol('entries');
 
+/**
+ * Extended implementation of Set, to support
+ * objects and custom comparison logic.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set}
+ */
 export class ObjectSet<T = any> extends Set<T> {
   private [ENTRIES]: T[];
 

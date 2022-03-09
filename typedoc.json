@@ -1,6 +1,6 @@
 {
   "entryPoints": [
-    "./src"
+    "./src/object_set.ts"
   ],
   "out": "./docs",
   "githubPages": true
