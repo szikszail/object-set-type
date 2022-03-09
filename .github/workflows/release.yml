@@ -1,0 +1,49 @@
+
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run build
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Node.js Setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run buildUpdate
+      - name: Relase
+        run: npm publish ./dist
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: Unpublishing BETA versions
+        run: |
+          cn=$(cat package.json | grep name | cut -d '"' -f 4)
+          cv=$(cat package.json | grep version | cut -d '"' -f 4)
+          betas=$(npm info $cn versions --json | grep $cv-beta | cut -d '"' -f 2)
+          for v in $betas; do npm deprecate $cn@$v "Use latest version!"; done
+        working-directory: ./dist
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
