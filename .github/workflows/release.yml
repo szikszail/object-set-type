@@ -43,7 +43,7 @@ jobs:
           cn=$(cat package.json | grep name | cut -d '"' -f 4)
           cv=$(cat package.json | grep version | cut -d '"' -f 4)
           betas=$(npm info $cn versions --json | grep $cv-beta | cut -d '"' -f 2)
-          for v in $betas; do npm unpublish $cn@$v; done
+          for v in $betas; do npm deprecate $cn@$v "Use latest version!"; done
         working-directory: ./dist
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
