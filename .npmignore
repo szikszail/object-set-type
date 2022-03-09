@@ -3,6 +3,4 @@
 .idea
 *.log
 /test
-.travis.yml
-/.github
-/.vscode
+package-lock.json
