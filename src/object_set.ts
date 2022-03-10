@@ -1,4 +1,3 @@
-import "./type.d.ts";
 import deepEqual = require('deep-eql');
 
 const ENTRIES = Symbol('entries');
