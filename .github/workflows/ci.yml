@@ -10,4 +10,4 @@ on:
   workflow_dispatch:
 jobs:
   call_npm_package_build:
-    uses: szikszail/workflows/.github/workflows/npm-package-build.yml@main
+    uses: szikszail/workflows/.github/workflows/npm-package-build.yml@v1
