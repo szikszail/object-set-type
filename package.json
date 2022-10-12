@@ -52,7 +52,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "deep-eql": "^4.1.0"
+    "deep-eql": "^4.1.1"
   },
   "jest": {
     "reporters": [
