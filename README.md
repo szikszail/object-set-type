@@ -1,6 +1,6 @@
 # object-set-type
 
-![Downloads](https://img.shields.io/npm/dw/object-set-type?style=flat-square) ![Version@npm](https://img.shields.io/npm/v/object-set-type?label=version%40npm&style=flat-square) ![Version@git](https://img.shields.io/github/package-json/v/szikszail/object-set-type/main?label=version%40git&style=flat-square) ![CI](https://img.shields.io/github/actions/workflow/status/szikszail/object-set-type/ci.yaml?branch=main&label=ci&style=flat-square) ![Docs](https://img.shields.io/github/actions/workflow/status/szikszail/object-set-type/docs.yaml?branch=main&label=docs&style=flat-square)
+![Downloads](https://img.shields.io/npm/dw/object-set-type?style=flat-square) ![Version@npm](https://img.shields.io/npm/v/object-set-type?label=version%40npm&style=flat-square) ![Version@git](https://img.shields.io/github/package-json/v/szikszail/object-set-type/main?label=version%40git&style=flat-square) ![CI](https://img.shields.io/github/actions/workflow/status/szikszail/object-set-type/ci.yml?branch=main&label=ci&style=flat-square) ![Docs](https://img.shields.io/github/actions/workflow/status/szikszail/object-set-type/docs.yml?branch=main&label=docs&style=flat-square)
 
 A Set implementation that supports **Objects** and **custom conditions**.
 
