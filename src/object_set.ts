@@ -1,6 +1,6 @@
-import deepEqual = require('deep-eql');
+import deepEqual from "deep-eql";
 
-const ENTRIES = Symbol('entries');
+const ENTRIES = Symbol("entries");
 
 /**
  * Extended implementation of Set, to support
@@ -19,6 +19,11 @@ export class ObjectSet<T = any> extends Set<T> {
         this.add(item);
       }
     }
+  }
+
+  public copy() {
+    const Constructor: new (iterable?: Iterable<T>) => this = this.constructor as any;
+    return new Constructor(this.values());
   }
 
   public equals(a: T, b: T): boolean {
@@ -45,7 +50,7 @@ export class ObjectSet<T = any> extends Set<T> {
   }
 
   public add(item?: T) {
-    if (typeof item !== 'undefined' && !this.has(item)) {
+    if (typeof item !== "undefined" && !this.has(item)) {
       this[ENTRIES].push(item);
     }
     return this;
@@ -59,15 +64,15 @@ export class ObjectSet<T = any> extends Set<T> {
     return this[ENTRIES][Symbol.iterator]();
   }
 
-  public keys(): IterableIterator<T> {
+  public keys(): SetIterator<T> {
     return this[Symbol.iterator]();
   }
 
-  public values(): IterableIterator<T> {
+  public values(): SetIterator<T> {
     return this[Symbol.iterator]();
   }
 
-  public * entries(): IterableIterator<[T, T]> {
+  public *entries(): SetIterator<[T, T]> {
     for (const e of this[ENTRIES]) {
       yield [e, e];
     }
