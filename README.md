@@ -6,7 +6,7 @@ A Set implementation that supports **Objects** and **custom conditions**.
 
 ## Usage
 
-```javascript
+```js
 const ObjectSet = require('object-set-type');
 
 const set = new ObjectSet();
