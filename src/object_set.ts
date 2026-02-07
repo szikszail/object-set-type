@@ -1,12 +1,13 @@
-import deepEqual = require('deep-eql');
+import deepEqual from "deep-eql";
 
-const ENTRIES = Symbol('entries');
+const ENTRIES = Symbol("entries");
 
 /**
  * Extended implementation of Set, to support
  * objects and custom comparison logic.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set}
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class ObjectSet<T = any> extends Set<T> {
   private [ENTRIES]: T[];
 
@@ -45,7 +46,7 @@ export class ObjectSet<T = any> extends Set<T> {
   }
 
   public add(item?: T) {
-    if (typeof item !== 'undefined' && !this.has(item)) {
+    if (typeof item !== "undefined" && !this.has(item)) {
       this[ENTRIES].push(item);
     }
     return this;
@@ -59,15 +60,15 @@ export class ObjectSet<T = any> extends Set<T> {
     return this[ENTRIES][Symbol.iterator]();
   }
 
-  public keys(): IterableIterator<T> {
+  public keys(): SetIterator<T> {
     return this[Symbol.iterator]();
   }
 
-  public values(): IterableIterator<T> {
+  public values(): SetIterator<T> {
     return this[Symbol.iterator]();
   }
 
-  public * entries(): IterableIterator<[T, T]> {
+  public *entries(): SetIterator<[T, T]> {
     for (const e of this[ENTRIES]) {
       yield [e, e];
     }
@@ -77,7 +78,11 @@ export class ObjectSet<T = any> extends Set<T> {
     return this[ENTRIES].length;
   }
 
-  public forEach(callbackfn: (value: T, value2: T, set: ObjectSet<T>) => void, thisArg?: any): void {
+  public forEach(
+    callbackfn: (value: T, value2: T, set: Set<T>) => void,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    thisArg?: any,
+  ): void {
     for (const e of this[ENTRIES]) {
       if (thisArg) {
         callbackfn.call(thisArg, e, e, this);
